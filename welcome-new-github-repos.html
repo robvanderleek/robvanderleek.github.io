@@ -28,6 +28,7 @@ var module = angular.module('test', ['ngMaterial']);
       return $http.
         get('https://api.github.com/events').
         then(function(response) { 
+          console.log('Queried GH API!');
           return response.data.filter(
             function(e) {
               return e.type == "CreateEvent";
@@ -45,19 +46,28 @@ var module = angular.module('test', ['ngMaterial']);
   function TestController($scope, $interval, TestService) {
     var self = this;
 
+    self.repos = [];
     self.reponame = 'Loading...';
     self.repourl = '';
 
     function update() {
-      TestService.loadData().then(function(data) {
-        if (data.length > 0) {
-          self.reponame = data[0].repo.name;
-          self.repourl = data[0].repo.html_url.substring(12);
-        }
-      });
+      if (self.repos.length > 0) {
+        var repo = self.repos.shift();
+        self.reponame = repo.repo.name;
+        self.repourl = 'https://' + repo.repo.url.substring(12);
+      }
     }
 
-    update();
+    function loadData(callback) {
+      if (self.repos.length < 3) {
+        return TestService.loadData().then(function (data) {
+          self.repos.append(data); 
+        });
+      }
+    }
+
+    loadData().then(update);
+    $interval(loadData, 5000);
     $interval(update, 5000);
   }
 })();
