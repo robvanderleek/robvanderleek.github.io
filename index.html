@@ -1,105 +1,107 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="test" ng-cloak>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Welcome new GitHub repositories!</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link href="css/grayscale.css" rel="stylesheet">
-  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-animate.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-aria.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-messages.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.js"></script>
-  <script>
-var module = angular.module('test', ['ngMaterial']);
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome new GitHub repositories!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="css/grayscale.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.js"></script>
+    <script>
+        var module = angular.module('test', ['ngMaterial']);
 
-(function() {
-  angular.module('test').service('TestService', TestService);
+        (function () {
+            angular.module('test').service('TestService', TestService);
 
-  TestService.$inject = ['$http', '$interval'];
+            TestService.$inject = ['$http', '$q'];
 
-  function TestService($http, $interval) {
-    var self = this;
+            function TestService($http, $q) {
+                var self = this;
 
-    self.loadData = function() {
-      return $http.
-        get('https://api.github.com/events').
-        then(function(response) { 
-          console.log('Queried GH API!');
-          return response.data.filter(
-            function(e) {
-              return e.type == "CreateEvent";
-            });
-        });
-    }
-  }  
-})();
+                self.loadData = function () {
+                    return $http.get('https://api.github.com/events').then(function (response) {
+                                if (response.headers('X-RateLimit-Remaining') == 0) {
+                                    throw new Error('GitHub rate limit exceeded, reload this page after 1 hour');
+                                } else {
+                                    return response.data.filter(
+                                            function (e) {
+                                                return e.type == "CreateEvent";
+                                            });
+                                }
+                            }
+                    );
+                }
+            }
+        })();
 
-(function() {
-  angular.module('test').controller('TestController', TestController);
+        (function () {
+            angular.module('test').controller('TestController', TestController);
 
-  TestController.$inject = ['$scope', '$interval', 'TestService'];
+            TestController.$inject = ['$scope', '$interval', 'TestService'];
 
-  function TestController($scope, $interval, TestService) {
-    var self = this;
+            function TestController($scope, $interval, TestService) {
+                var self = this;
 
-    self.repos = [];
-    self.reponame = 'Loading...';
-    self.repourl = '';
+                self.repos = [];
+                self.reponame = 'Loading...';
+                self.repourl = '';
+                self.created_at = '';
 
-    function update() {
-      if (self.repos.length > 0) {
-        var repo = self.repos.shift();
-        self.reponame = repo.repo.name;
-        self.repourl = 'https://' + repo.repo.url.substring(12);
-      }
-    }
+                function update() {
+                    if (self.repos.length > 0) {
+                        var repo = self.repos.shift();
+                        self.reponame = repo.repo.name;
+                        self.repourl = 'https://github.com' + repo.repo.url.substring(28);
+                        self.created_at = new Date(Date.parse(repo.created_at)).toString();
+                    }
+                }
 
-    function loadData(callback) {
-      if (self.repos.length < 3) {
-        return TestService.loadData().then(function (data) {
-          self.repos = self.repos.concat(data); 
-        });
-      }
-    }
+                function loadData(callback) {
+                    if (self.repos.length < 3) {
+                        return TestService.loadData().then(function (data) {
+                            self.repos = self.repos.concat(data);
+                        }).catch(function (e) {
+                            self.reponame = e;
+                            self.repourl = self.created_at = '';
+                            $interval.cancel(self.loadDataPromise);
+                            $interval.cancel(self.updatePromise);
+                        });
+                    }
+                }
 
-    loadData().then(update);
-    $interval(loadData, 5000);
-    $interval(update, 5000);
-  }
-})();
-</script>
+                loadData().then(update);
+                self.loadDataPromise = $interval(loadData, 5000);
+                self.updatePromise = $interval(update, 5000);
+            }
+        })();
+    </script>
 </head>
 <body ng-controller="TestController as tc">
 <header class="intro">
-  <div class="intro-body">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <h1 class="brand-heading">Welcome</h1>
-          <p class="intro-text">to this world new GitHub repositories!</p>
-          <p>{{tc.reponame}}</br>
-          <a href="{{tc.repourl}}">{{tc.repourl}}</a></p>
-          <a href="#about" class="btn btn-circle page-scroll">
-            <i class="fa fa-angle-double-down animated"></i>
-          </a>
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="brand-heading">Welcome</h1>
+                    <p class="intro-text">to this world new GitHub repository!</p>
+                    <p>{{tc.reponame}}</br>
+                        <a href="{{tc.repourl}}">{{tc.repourl}}</a></br>
+                        Born at: {{tc.created_at}}</p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </header>
-<h1>{{tc.title()}}</h1>
-<md-list>
-<md-list-item class="md-2-line" ng-repeat="repo in tc.getData() track by $index">
-<div class="md-list-item-text">
-<h3>{{repo}}</h3>
-</div>
-</md-list-item>
-</md-list>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
 </body>
 </html>
