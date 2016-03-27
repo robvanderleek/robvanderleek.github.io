@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="test" ng-cloak>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome new GitHub repositories!</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href="css/grayscale.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-messages.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.js"></script>
+  <script>
+var module = angular.module('test', ['ngMaterial']);
+
+(function() {
+  angular.module('test').service('TestService', TestService);
+
+  TestService.$inject = ['$http', '$interval'];
+
+  function TestService($http, $interval) {
+    var self = this;
+
+    self.loadData = function() {
+      return $http.
+        get('https://api.github.com/events').
+        then(function(response) { 
+          return response.data.filter(
+            function(e) {
+              return e.type == "CreateEvent";
+            });
+        });
+    }
+  }  
+})();
+
+(function() {
+  angular.module('test').controller('TestController', TestController);
+
+  TestController.$inject = ['$scope', '$interval', 'TestService'];
+
+  function TestController($scope, $interval, TestService) {
+    var self = this;
+
+    self.reponame = 'Loading...';
+    self.repourl = '';
+
+    function update() {
+      TestService.loadData().then(function(data) {
+        if (data.length > 0) {
+          self.reponame = data[0].repo.name;
+          self.repourl = data[0].repo.html_url.substring(12);
+        }
+      });
+    }
+
+    update();
+    $interval(update, 5000);
+  }
+})();
+</script>
+</head>
+<body ng-controller="TestController as tc">
+<header class="intro">
+  <div class="intro-body">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <h1 class="brand-heading">Welcome</h1>
+          <p class="intro-text">to this world new GitHub repositories!</p>
+          <p>{{tc.reponame}}</br>
+          <a href="{{tc.repourl}}">{{tc.repourl}}</a></p>
+          <a href="#about" class="btn btn-circle page-scroll">
+            <i class="fa fa-angle-double-down animated"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<h1>{{tc.title()}}</h1>
+<md-list>
+<md-list-item class="md-2-line" ng-repeat="repo in tc.getData() track by $index">
+<div class="md-list-item-text">
+<h3>{{repo}}</h3>
+</div>
+</md-list-item>
+</md-list>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</body>
+</html>
