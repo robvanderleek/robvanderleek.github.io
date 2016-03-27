@@ -61,7 +61,7 @@ var module = angular.module('test', ['ngMaterial']);
     function loadData(callback) {
       if (self.repos.length < 3) {
         return TestService.loadData().then(function (data) {
-          self.repos.append(data); 
+          self.repos = self.repos.concat(data); 
         });
       }
     }
