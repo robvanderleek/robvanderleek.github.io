@@ -4,16 +4,86 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome new GitHub repositories!</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link href="css/grayscale.css" rel="stylesheet">
+    <title>GitHub live stream</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:600" rel="stylesheet">
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-animate.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-aria.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-messages.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.js"></script>
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            background-color: #000;
+        }
+
+        .intro {
+            display: table;
+            width: 100%;
+            height: auto;
+            padding: 100px 0;
+            text-align: center;
+            color: #fff;
+            background: url(images/chick_1920x1280.jpg) no-repeat bottom center scroll;
+            background-color: #000;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+            height: 100%;
+            padding: 0;
+        }
+
+        .intro .intro-body {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        h1 {
+            margin: 0 0 35px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 64px;
+        }
+
+        h2 {
+            margin: 0 0 35px;
+            font-size: 32px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #42dca3;
+            -webkit-transition: all .2s ease-in-out;
+            -moz-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #1d9b6c;
+        }
+
+        a:focus {
+            text-decoration: none;
+            color: #42dca3;
+        }
+
+        p {
+            margin: 0 0 35px;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+    </style>
     <script>
         var module = angular.module('test', ['ngMaterial']);
 
@@ -27,15 +97,15 @@
 
                 self.loadData = function () {
                     return $http.get('https://api.github.com/events').then(function (response) {
-                                if (response.headers('X-RateLimit-Remaining') == 0) {
-                                    throw new Error('GitHub rate limit exceeded, reload this page after 1 hour');
-                                } else {
-                                    return response.data.filter(
-                                            function (e) {
-                                                return e.type == "CreateEvent";
-                                            });
-                                }
+                            if (response.headers('X-RateLimit-Remaining') == 0) {
+                                throw new Error('GitHub rate limit exceeded, reload this page after 1 hour');
+                            } else {
+                                return response.data.filter(
+                                    function (e) {
+                                        return e.type == "CreateEvent" && e.payload.ref_type == "repository";
+                                    });
                             }
+                        }
                     );
                 }
             }
@@ -67,6 +137,9 @@
                     if (self.repos.length < 3) {
                         return TestService.loadData().then(function (data) {
                             self.repos = self.repos.concat(data);
+                            if (self.repos.length == 0) {
+                                console.log("No new repositories found, retrying in 5...");
+                            }
                         }).catch(function (e) {
                             self.reponame = e;
                             self.repourl = self.created_at = '';
@@ -89,19 +162,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <h1 class="brand-heading">Welcome</h1>
-                    <p class="intro-text">to this world new GitHub repository!</p>
-                    <p>{{tc.reponame}}</br>
-                        <a href="{{tc.repourl}}">{{tc.repourl}}</a></br>
-                        Born at: {{tc.created_at}}</p>
+                    <h1>Every great software system</h1>
+                    <h2>Starts with a single line of code</h2>
+                    <p>
+                        New GitHub repository created<br/>
+                        {{tc.created_at}}<br/>
+                        {{tc.reponame}}<br/>
+                        <a target="_blank" href="{{tc.repourl}}">{{tc.repourl}}</a><br/>
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 </header>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-        crossorigin="anonymous"></script>
 </body>
 </html>
