@@ -1,0 +1,10 @@
+{
+  "name": "robvanderleek.github.io",
+  "private": true,
+  "scripts": {
+    "start": "browser-sync start -s -f . --no-notify"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7"
+  }
+}
