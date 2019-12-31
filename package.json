@@ -5,8 +5,8 @@
     "start": "next",
     "dev": "next",
     "build": "next build",
-    "export": "yarn run build && next export",
-    "deploy": "yarn export && touch out/.nojekyll && gh-pages -t -b master -d out",
+    "export": "yarn run build && next export && touch out/.nojekyll",
+    "deploy": "yarn export && gh-pages -t -b master -d out",
     "start-prod": "next start"
   },
   "dependencies": {
