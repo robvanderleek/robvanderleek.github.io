@@ -1,0 +1,13 @@
+name: Deploy
+on:
+  push:
+    branches:
+    - master    
+jobs:
+  deploy:
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - run: yarn deploy
