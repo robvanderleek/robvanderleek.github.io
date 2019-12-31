@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    background-color: #101214;
+    color: #7A7C80;
+}
+
+h2, .white {
+    color: #fff;
+}
+
+a {
+    color: #7A7C80;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fff;
+    transition: 0.3s;
+}
+
+@media (max-width: 780px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .contact {
+        padding: 0;
+        padding-top: 5rem;
+    }
+
+    .info {
+        padding: 0;
+        padding-left: 1.5rem;
+        padding-top: 2rem;
+    }
+}
