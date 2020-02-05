@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 import {Contact, Info, Main} from "./App.style";
-import profile_picture from './static/media/me-445x459.png';
+import profile_picture from './static/media/me-2020-1200x1597.jpg';
 
 function App() {
     return (
-        <div className="App">
+        <div>
             <Main>
                 <Contact>
                     <img src={profile_picture} alt="This is me" height="375"/>
