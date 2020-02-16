@@ -4,10 +4,15 @@ export const Main = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    
+    @media (min-width: 1060px) {
+        height: 100%;
+        flex-direction: row;
+    }
 `;
 
 export const Contact = styled.div`
-    padding-top: 20vh;
     text-align: center;
     & > p {
         font-size: 1.1rem;
@@ -25,9 +30,7 @@ export const Contact = styled.div`
 `;
 
 export const Info = styled.div`
-    padding-top: 20vh;
     width: 40%;
-
     & > h2 {
         font-size: 1.7rem;
         margin-bottom: 10px;
