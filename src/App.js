@@ -20,8 +20,11 @@ function App() {
             <Info>
                 <h2>About</h2>
                 <p>Software engineer. Lives and works in The Netherlands. Studied Computer Science at Delft
-                    University of Technology. Currently working at a Computer Vision Machine Learning startup
-                    in Amsterdam. Passion for software quality and software minimalism. I've done some of my best
+                    University of Technology. Currently working at a <a href="https://keplervision.eu">Computer
+                        Vision Machine Learning startup in Amsterdam</a>. Passion for software quality and software
+                    minimalism.
+                    I've done some of my
+                    best
                     development work under the shower.</p>
             </Info>
         </Main>

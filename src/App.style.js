@@ -30,7 +30,10 @@ export const Contact = styled.div`
 `;
 
 export const Info = styled.div`
-    width: 40%;
+    width: 60%;
+    @media (min-width: 1060px) {
+        width: 40%;
+    }
     & > h2 {
         font-size: 1.7rem;
         margin-bottom: 10px;
