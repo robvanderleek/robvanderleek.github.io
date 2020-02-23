@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {createMuiTheme, MuiThemeProvider} from '@material-ui/core/styles';
-import {Router} from "react-router-dom";
-import history from './history';
+import {HashRouter} from "react-router-dom";
 
 const theme = createMuiTheme({
     palette: {
@@ -13,16 +12,16 @@ const theme = createMuiTheme({
             main: '#000000'
         },
         secondary: {
-            main: '#B0B0B0'
+            main: '#c3c3c3'
         }
     },
 });
 
 function getRootElement() {
     return (
-        <Router history={history}>
+        <HashRouter>
             <MuiThemeProvider theme={theme}><App/></MuiThemeProvider>
-        </Router>
+        </HashRouter>
     );
 }
 

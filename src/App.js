@@ -6,14 +6,13 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import About from "./About";
 import Portfolio from "./Portfolio";
-import {Route, Switch} from "react-router-dom";
-import history from './history';
+import {Link, Route, Switch} from "react-router-dom";
 
 function App() {
     const [value, setValue] = useState(0);
 
     useEffect(() => {
-        if (history.location.pathname === '/portfolio') {
+        if (window.location.hash === '#/portfolio') {
             setValue(1);
         }
     }, []);
@@ -26,8 +25,8 @@ function App() {
         <Main>
             <AppBar position="absolute">
                 <Tabs value={value} onChange={handleChange} centered>
-                    <Tab label="About" onClick={() => history.push('/')}/>
-                    <Tab label="Portfolio" onClick={() => history.push('/portfolio')}/>
+                    <Tab label="About" to="/" component={Link} disabled={value === 0}/>
+                    <Tab label="Portfolio" to="/portfolio" component={Link} disabled={value === 1}/>
                 </Tabs>
             </AppBar>
             <Content>
