@@ -1,32 +1,41 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
-import {Contact, Info, Main} from "./App.style";
-import profile_picture from './static/media/me-2020-1200x1597.jpg';
+import {Content, Main} from "./App.style";
+import AppBar from "@material-ui/core/AppBar";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import About from "./About";
+import Portfolio from "./Portfolio";
+import {Route, Switch} from "react-router-dom";
+import history from './history';
 
 function App() {
+    const [value, setValue] = useState(0);
+
+    useEffect(() => {
+        if (history.location.pathname === '/portfolio') {
+            setValue(1);
+        }
+    }, []);
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+
     return (
         <Main>
-            <Contact>
-                <img src={profile_picture} alt="This is me" height="375"/>
-                <h2>Rob van der Leek</h2>
-                <p><a href="mailto:robvanderleek@gmail.com">robvanderleek@gmail.com</a></p>
-                <span className="icons">
-                        <a href="https://twitter.com/robvanderleek"><i className="fab fa-twitter"/></a>
-                        <a href="https://www.linkedin.com/in/rob-van-der-leek-66596962"><i className="fab fa-linkedin"/></a>
-                        <a href="https://medium.com/@robvanderleek"><i className="fab fa-medium"/></a>
-                        <a href="https://github.com/robvanderleek"><i className="fab fa-github"/></a>
-                    </span>
-            </Contact>
-            <Info>
-                <h2>About</h2>
-                <p>Software engineer. Lives and works in The Netherlands. Studied Computer Science at Delft
-                    University of Technology. Currently working at a <a href="https://keplervision.eu">Computer
-                        Vision Machine Learning startup in Amsterdam</a>. Passion for software quality and software
-                    minimalism.
-                    I've done some of my
-                    best
-                    development work under the shower.</p>
-            </Info>
+            <AppBar position="absolute">
+                <Tabs value={value} onChange={handleChange} centered>
+                    <Tab label="About" onClick={() => history.push('/')}/>
+                    <Tab label="Portfolio" onClick={() => history.push('/portfolio')}/>
+                </Tabs>
+            </AppBar>
+            <Content>
+                <Switch>
+                    <Route exact path='/portfolio' component={Portfolio}/>
+                    <Route component={About}/>
+                </Switch>
+            </Content>
         </Main>
     );
 }

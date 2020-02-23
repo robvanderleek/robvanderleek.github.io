@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
 export const Main = styled.div`
+    height: 100%;
+`;
+
+export const Content = styled.div`
+    margin-top: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,6 +14,10 @@ export const Main = styled.div`
     @media (min-width: 1060px) {
         height: 100%;
         flex-direction: row;
+    }
+    
+    @media (min-height: 900px) {
+        margin-top: unset;
     }
 `;
 
@@ -30,7 +39,9 @@ export const Contact = styled.div`
 `;
 
 export const Info = styled.div`
-    width: 60%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 70%;
     @media (min-width: 1060px) {
         width: 40%;
     }
@@ -50,4 +61,9 @@ export const Info = styled.div`
         padding: 5px;
         padding-left: 0;
     }
+`;
+
+export const ProfileImage = styled.img`
+    margin-top: 1em;
+    margin-bottom: 1em;
 `;
