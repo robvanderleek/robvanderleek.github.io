@@ -9,3 +9,5 @@ jobs:
         steps:
         - name: Create Issue Branch
           uses: robvanderleek/create-issue-branch@staging
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
