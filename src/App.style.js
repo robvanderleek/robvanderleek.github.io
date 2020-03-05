@@ -5,20 +5,18 @@ export const Main = styled.div`
 `;
 
 export const Content = styled.div`
-    margin-top: 30px;
+    margin-top: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     
     @media (min-width: 1060px) {
+        margin-top: unset;
         height: 100%;
         flex-direction: row;
     }
-    
-    @media (min-height: 900px) {
-        margin-top: unset;
-    }
+
 `;
 
 export const Contact = styled.div`
