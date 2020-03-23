@@ -30,6 +30,9 @@ function App() {
                 <Tabs value={value} onChange={handleChange} centered>
                     <Tab label="About" to="/" component={Link} disabled={value === 0}/>
                     <Tab label="Portfolio" to="/portfolio" component={Link} disabled={value === 1}/>
+                    <a className="tab"
+                       href="https://www.notion.so/robvanderleek/To-Whom-It-May-Concern-9abe523d95d9479b97c0d29ad1b7e0a1"
+                       target="_blank" rel="noopener noreferrer"><Tab label="Blog"/></a>
                 </Tabs>
             </AppBar>
             <Content>

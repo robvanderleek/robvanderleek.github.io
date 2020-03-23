@@ -28,6 +28,10 @@ a {
   text-decoration: none;
 }
 
+a.tab {
+  color: unset;
+}
+
 a:hover {
   color: #fff;
   transition: 0.3s;
