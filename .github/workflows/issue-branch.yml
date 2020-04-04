@@ -10,6 +10,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: Create Issue Branch
-          uses: robvanderleek/create-issue-branch@staging
+          uses: robvanderleek/create-issue-branch@master
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
