@@ -29,14 +29,18 @@ export default function Portfolio() {
                 />
                 <CardMedia style={{height: '150px', objectFit: 'contain'}} component="img" image={ciblogo}/>
                 <CardContent>
+                    <iframe
+                        src="https://ghbtns.com/github-btn.html?user=robvanderleek&repo=create-issue-branch&type=star&count=true"
+                        frameBorder="0" scrolling="0" width="150" height="20"
+                        title="Star repository on GitHub"></iframe>
                     <Typography variant="body2" color="textSecondary" component="p">
                         GitHub App/Action that automates the creation of issue branches on GitHub.
                     </Typography>
                 </CardContent>
                 <CardActions>
                     <a href="https://github.com/robvanderleek/create-issue-branch">
-                        <Button size="small" color="primary">
-                            Go to GitHub
+                        <Button size="small" color="secondary">
+                            Go to GitHub repository
                         </Button>
                     </a>
                 </CardActions>
@@ -54,7 +58,7 @@ export default function Portfolio() {
                 </CardContent>
                 <CardActions>
                     <a href="https://medium.com/bettercode/how-to-build-a-modern-ci-cd-pipeline-5faa01891a5b">
-                        <Button size="small" color="primary">
+                        <Button size="small" color="secondary">
                             Read it on Medium
                         </Button>
                     </a>
