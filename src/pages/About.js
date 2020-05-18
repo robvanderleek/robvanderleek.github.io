@@ -1,10 +1,11 @@
-import {Contact, Info, ProfileImage} from "./App.style";
-import profile_picture from "./static/media/me-2020-1200x1597.jpg";
+import {Contact, Info, ProfileImage} from "../App.style";
+import profile_picture from "../static/media/me-2020-1200x1597.jpg";
 import React from "react";
+import {AboutArea} from "./About.style";
 
 export default function About() {
     return (
-        <React.Fragment>
+        <AboutArea>
             <Contact>
                 <ProfileImage src={profile_picture} alt="This is me" height="375"/>
                 <h2>Rob van der Leek</h2>
@@ -23,6 +24,6 @@ export default function About() {
                         Machine Learning startup in Amsterdam</a>. Passion for software quality and software minimalism.
                     I've done some of my best development work under the shower.</p>
             </Info>
-        </React.Fragment>
+        </AboutArea>
     );
 }
