@@ -5,13 +5,13 @@
     "main.js.map": "/static/js/main.41e3d7a0.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.8a668db7.js",
     "runtime-main.js.map": "/static/js/runtime-main.8a668db7.js.map",
-    "static/js/2.e3ac687f.chunk.js": "/static/js/2.e3ac687f.chunk.js",
-    "static/js/2.e3ac687f.chunk.js.map": "/static/js/2.e3ac687f.chunk.js.map",
+    "static/js/2.1e57f2a5.chunk.js": "/static/js/2.1e57f2a5.chunk.js",
+    "static/js/2.1e57f2a5.chunk.js.map": "/static/js/2.1e57f2a5.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.32ac43795c264476f83750fb963898d4.js": "/precache-manifest.32ac43795c264476f83750fb963898d4.js",
+    "precache-manifest.5ef9fb265508370dbf5ae50e4edf5209.js": "/precache-manifest.5ef9fb265508370dbf5ae50e4edf5209.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.cae38a67.chunk.css.map": "/static/css/main.cae38a67.chunk.css.map",
-    "static/js/2.e3ac687f.chunk.js.LICENSE": "/static/js/2.e3ac687f.chunk.js.LICENSE",
+    "static/js/2.1e57f2a5.chunk.js.LICENSE": "/static/js/2.1e57f2a5.chunk.js.LICENSE",
     "static/media/cicd-buzz.jpg": "/static/media/cicd-buzz.215b9c0c.jpg",
     "static/media/create-issue-branch.png": "/static/media/create-issue-branch.6d083a28.png",
     "static/media/me-2020-1200x1597.jpg": "/static/media/me-2020-1200x1597.7f33f379.jpg",
@@ -19,7 +19,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.8a668db7.js",
-    "static/js/2.e3ac687f.chunk.js",
+    "static/js/2.1e57f2a5.chunk.js",
     "static/css/main.cae38a67.chunk.css",
     "static/js/main.41e3d7a0.chunk.js"
   ]
