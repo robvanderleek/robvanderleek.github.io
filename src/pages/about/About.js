@@ -1,5 +1,5 @@
-import {Contact, Info, ProfileImage} from "../App.style";
-import profile_picture from "../static/media/me-2020-1200x1597.jpg";
+import {Contact, Info, ProfileImage} from "../../App.style";
+import profile_picture from "../../static/media/me-2020-1200x1597.jpg";
 import React from "react";
 import {AboutArea} from "./About.style";
 
