@@ -10,6 +10,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: Create Issue Branch
-          uses: robvanderleek/create-issue-branch@master
+          uses: robvanderleek/create-issue-branch@issue-201-Feature_request_provide_the_final_branch_name_as_an_action_output
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        - name: Echo branch name
+          run: echo ${{ steps.Create_Issue_Branch.outputs.branchName }}
