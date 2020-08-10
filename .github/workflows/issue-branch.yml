@@ -11,7 +11,7 @@ jobs:
         steps:
         - name: Create Issue Branch
           id: Create_Issue_Branch
-          run: echo "::set-output name=branchName::BAR"
+          run: echo "::set-output name=branchName::44-This_is_a_test_test"
           # uses: robvanderleek/create-issue-branch@issue-201-Feature_request_provide_the_final_branch_name_as_an_action_output
           # env:
             #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
