@@ -11,9 +11,9 @@ jobs:
         steps:
         - name: Create Issue Branch
           id: Create_Issue_Branch
-          run: echo "::set-output name=FOO::BAR"
+          run: echo "::set-output name=branchName::BAR"
           # uses: robvanderleek/create-issue-branch@issue-201-Feature_request_provide_the_final_branch_name_as_an_action_output
           # env:
             #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         - name: Echo branch name
-          run: echo ${{ steps.Create_Issue_Branch.outputs.FOO }}
+          run: echo ${{ steps.Create_Issue_Branch.outputs.branchName }}
