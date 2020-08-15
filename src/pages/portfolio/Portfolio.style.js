@@ -9,3 +9,14 @@ export const PortfolioCardArea = styled(Card)`
     margin-top: 20px;
     margin-bottom: 20px;
 `;
+
+export const PortfolioCardMedia = styled.img`
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    filter: grayscale(1);
+    &:hover {
+        filter: none;
+        transition: 1.5s;
+    }
+`;
