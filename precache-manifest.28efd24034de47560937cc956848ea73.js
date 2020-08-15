@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6f55faad2cef93dc8cfadb014ceb9617",
+    "revision": "ef1d875bfc6ae947cede8167fbf003af",
     "url": "/index.html"
   },
   {
-    "revision": "ba46c228e369574a93e6",
+    "revision": "de36f89adfda4c435988",
     "url": "/static/css/main.c5788a12.chunk.css"
   },
   {
-    "revision": "acc7f7d32c6934ab1345",
-    "url": "/static/js/2.cedf940b.chunk.js"
+    "revision": "c2b5736308722ac24366",
+    "url": "/static/js/2.1602b5a7.chunk.js"
   },
   {
     "revision": "78b95f6e5a0d74fd4cf4c5c2f308cf60",
-    "url": "/static/js/2.cedf940b.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.1602b5a7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ba46c228e369574a93e6",
-    "url": "/static/js/main.6fe8f6f6.chunk.js"
+    "revision": "de36f89adfda4c435988",
+    "url": "/static/js/main.7e9b21d9.chunk.js"
   },
   {
     "revision": "5f3f35589bcd120f3312",
@@ -28,15 +28,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/cicd-buzz.215b9c0c.jpg"
   },
   {
-    "revision": "6d083a283239fb605efa493b1d41fbc6",
-    "url": "/static/media/create-issue-branch.6d083a28.png"
+    "revision": "40b5e33e7044520f1e954b0ab8854871",
+    "url": "/static/media/create-issue-branch.40b5e33e.png"
   },
   {
     "revision": "7f33f379a1b36c16a22f4cc71386edbf",
     "url": "/static/media/me-2020-1200x1597.7f33f379.jpg"
   },
   {
-    "revision": "d1f6104de2e707bd2438e897f110d97a",
-    "url": "/static/media/patching.d1f6104d.png"
+    "revision": "769336c26a765eb182e4cc47aea0adae",
+    "url": "/static/media/patching.769336c2.png"
   }
 ]);
