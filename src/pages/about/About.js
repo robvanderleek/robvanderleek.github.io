@@ -8,7 +8,7 @@ export default function About() {
     return (
         <AboutArea>
             <Contact>
-                <ProfileImage src={profile_picture} alt="This is me" height="375"/>
+                <ProfileImage src={profile_picture} alt="This is me" width="282" height="375"/>
                 <h2>Rob van der Leek</h2>
                 <p><a href="mailto:robvanderleek@gmail.com">robvanderleek@gmail.com</a></p>
                 <span className="icons">
