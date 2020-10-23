@@ -1,2 +1,19 @@
+gitSafeReplacementChar: '-'
 branchName: '${issue.number}-${issue.title}'
-mode: chatops
+branches:
+  - label: enhancement
+    prefix: feature/
+  - label: bug
+    prefix: bugfix/
+  - label: '*'
+    prefix: issues/
+  - label: question
+    skip: true
+  - label: documentation
+    skip: true
+  - label: duplicate
+    skip: true
+  - label: help wanted
+    skip: true
+  - label: invalid
+    skip: true 
