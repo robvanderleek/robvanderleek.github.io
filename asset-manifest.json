@@ -1,26 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.c5788a12.chunk.css",
-    "main.js": "/static/js/main.27ac70c9.chunk.js",
-    "main.js.map": "/static/js/main.27ac70c9.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.c72e126b.js",
-    "runtime-main.js.map": "/static/js/runtime-main.c72e126b.js.map",
-    "static/js/2.1db39417.chunk.js": "/static/js/2.1db39417.chunk.js",
-    "static/js/2.1db39417.chunk.js.map": "/static/js/2.1db39417.chunk.js.map",
+    "main.css": "/static/css/main.3beeeac2.chunk.css",
+    "main.js": "/static/js/main.f1fb2d21.chunk.js",
+    "main.js.map": "/static/js/main.f1fb2d21.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d7fefb09.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d7fefb09.js.map",
+    "static/js/2.9b0a6a4f.chunk.js": "/static/js/2.9b0a6a4f.chunk.js",
+    "static/js/2.9b0a6a4f.chunk.js.map": "/static/js/2.9b0a6a4f.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.105d89ef7dc3df1354ca51cb8149a549.js": "/precache-manifest.105d89ef7dc3df1354ca51cb8149a549.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.c5788a12.chunk.css.map": "/static/css/main.c5788a12.chunk.css.map",
-    "static/js/2.1db39417.chunk.js.LICENSE.txt": "/static/js/2.1db39417.chunk.js.LICENSE.txt",
-    "static/media/cicd-buzz.jpg": "/static/media/cicd-buzz.215b9c0c.jpg",
-    "static/media/create-issue-branch.png": "/static/media/create-issue-branch.40b5e33e.png",
-    "static/media/me-2020-1200x1597.jpg": "/static/media/me-2020-1200x1597.7f33f379.jpg",
-    "static/media/patching.png": "/static/media/patching.769336c2.png"
+    "static/css/main.3beeeac2.chunk.css.map": "/static/css/main.3beeeac2.chunk.css.map",
+    "static/js/2.9b0a6a4f.chunk.js.LICENSE.txt": "/static/js/2.9b0a6a4f.chunk.js.LICENSE.txt",
+    "static/media/cicd-buzz.70677b20.jpg": "/static/media/cicd-buzz.70677b20.jpg",
+    "static/media/create-issue-branch.5e8af63a.png": "/static/media/create-issue-branch.5e8af63a.png",
+    "static/media/me-2020-1200x1597.c5c2db38.jpg": "/static/media/me-2020-1200x1597.c5c2db38.jpg",
+    "static/media/patching.c779c675.png": "/static/media/patching.c779c675.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.c72e126b.js",
-    "static/js/2.1db39417.chunk.js",
-    "static/css/main.c5788a12.chunk.css",
-    "static/js/main.27ac70c9.chunk.js"
+    "static/js/runtime-main.d7fefb09.js",
+    "static/js/2.9b0a6a4f.chunk.js",
+    "static/css/main.3beeeac2.chunk.css",
+    "static/js/main.f1fb2d21.chunk.js"
   ]
 }
