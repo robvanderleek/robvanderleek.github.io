@@ -1,6 +1,6 @@
 gitSafeReplacementChar: '-'
 branchName: '${issue.number}-${issue.title}'
-openDraftPR: true
+openPR: true
 branches:
   - label: enhancement
     prefix: feature/
