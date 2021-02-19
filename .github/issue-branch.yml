@@ -2,19 +2,7 @@ gitSafeReplacementChar: '-'
 branchName: '${issue.number}-${issue.title}'
 openPR: true
 branches:
-  - label: enhancement
-    prefix: feature/
   - label: bug
-    prefix: bugfix/
+    skip: false
   - label: '*'
-    prefix: issues/
-  - label: question
     skip: true
-  - label: documentation
-    skip: true
-  - label: duplicate
-    skip: true
-  - label: help wanted
-    skip: true
-  - label: invalid
-    skip: true 
