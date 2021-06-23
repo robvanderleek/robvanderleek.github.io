@@ -5,5 +5,7 @@ mode: chatops
 branches:
   - label: bug
     skip: false
+  - label: enhancement
+    skip: false
   - label: '*'
     skip: true
