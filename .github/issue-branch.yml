@@ -1,6 +1,7 @@
 gitSafeReplacementChar: '-'
 branchName: '${issue.number}-${issue.title}'
-openPR: true
+# openPR: true
+mode: chatops
 branches:
   - label: bug
     skip: false
