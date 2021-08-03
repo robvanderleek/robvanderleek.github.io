@@ -4,11 +4,17 @@ import patchingImage from "../../static/media/patching.png";
 import repoMeisterImage from "../../static/media/repomeister.png";
 import ciblImage from "../../static/media/create-issue-branch.png";
 import cicdbuzzImage from "../../static/media/cicd-buzz.jpg";
+import pwaNesImage from "../../static/media/pwa-nes.png";
 import Typography from "@material-ui/core/Typography";
 
 export default function Portfolio() {
     return (
         <div style={{marginTop: '60px', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <PortfolioCard title="PWA NES" year="2021" image={pwaNesImage} url="https://pwa-nes.vercel.app">
+                <Typography variant="body1" color="textSecondary" component="p">
+                    8-bit NES Emulator as Progressive Web App
+                </Typography>
+            </PortfolioCard>
             <PortfolioCard title="Repo Meister" year="2021" image={repoMeisterImage} url="https://repomeister.com">
                 <Typography variant="body1" color="textSecondary" component="p">
                     GitHub repository management made easy
