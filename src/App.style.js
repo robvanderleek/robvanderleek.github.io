@@ -34,7 +34,7 @@ export const Info = styled.div`
     }
 
     & > p {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         padding-bottom: 10px;
         margin: 0;
     }

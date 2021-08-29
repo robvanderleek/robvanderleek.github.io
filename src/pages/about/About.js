@@ -3,6 +3,7 @@ import profile_picture from "../../static/media/me-2020-1200x1597.jpg";
 import React from "react";
 import {AboutArea} from "./About.style";
 import Hyperlink from "../../components/Hyperlink";
+import {Link} from "react-router-dom";
 
 export default function About() {
     return (
@@ -22,13 +23,15 @@ export default function About() {
                 </span>
             </Contact>
             <Info>
-                <p>Software engineer. Lives and works in The Netherlands. Studied Computer Science at Delft
-                    University of Technology. Currently working at a <Hyperlink href="https://keplervision.eu">Computer
-                        Vision Machine Learning startup in Amsterdam</Hyperlink>. Passion for <Hyperlink
-                        href="https://www.amazon.com/s?i=stripbooks&rh=p_27%3ARob+van+der+Leek">software
-                        quality</Hyperlink> and
-                    software minimalism.
-                    I've done some of my best development work under the shower.</p>
+                <p>Lives and works in The Netherlands.</p>
+                <p><Hyperlink href="https://www.dropbox.com/s/3xbw5atzmxuarl5/thesis.pdf?dl=0">Studied Computer Science
+                    at Delft University of Technology.</Hyperlink></p>
+                <p><Hyperlink href="https://keplervision.eu">Currently working at a Computer
+                    Vision Machine Learning startup in Amsterdam.</Hyperlink></p>
+                <p>Passion for <Hyperlink href="https://www.amazon.com/s?i=stripbooks&rh=p_27%3ARob+van+der+Leek">software
+                    quality</Hyperlink> and software minimalism.</p>
+                <p><Link to="/portfolio">Most of my side projects are on the Portfolio page.</Link></p>
+                <p>I've done some of my best development work under the shower.</p>
             </Info>
         </AboutArea>
     );
