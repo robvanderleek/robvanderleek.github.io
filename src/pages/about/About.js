@@ -18,6 +18,8 @@ export default function About() {
                         className="fab fa-linkedin"/></Hyperlink>
                     <Hyperlink href="https://medium.com/@robvanderleek"><i className="fab fa-medium"/></Hyperlink>
                     <Hyperlink href="https://github.com/robvanderleek"><i className="fab fa-github"/></Hyperlink>
+                    <Hyperlink href="https://stackoverflow.com/users/4232558/rob-van-der-leek"><i
+                        className="fab fa-stack-overflow"/></Hyperlink>
                     <Hyperlink href="https://www.instagram.com/robvanderleek"><i
                         className="fab fa-instagram"/></Hyperlink>
                 </span>
@@ -28,10 +30,11 @@ export default function About() {
                     at Delft University of Technology.</Hyperlink></p>
                 <p><Hyperlink href="https://keplervision.eu">Currently working at a Computer
                     Vision Machine Learning startup in Amsterdam.</Hyperlink></p>
-                <p>Passion for <Hyperlink href="https://www.amazon.com/s?i=stripbooks&rh=p_27%3ARob+van+der+Leek">software
-                    quality</Hyperlink> and software minimalism.</p>
-                <p><Link to="/portfolio">Most of my side projects are on the Portfolio page.</Link></p>
-                <p>I've done some of my best development work under the shower.</p>
+                <p><Hyperlink href="https://www.amazon.com/s?i=stripbooks&rh=p_27%3ARob+van+der+Leek">Passion for
+                    software quality and software minimalism.</Hyperlink></p>
+                <p><Link to="/portfolio">Side projects are on the Portfolio page.</Link></p>
+                <p><Link to="/gists">Short technical writings are on the Gists page.</Link></p>
+                <p>Done some of his best development work under the shower.</p>
             </Info>
         </AboutArea>
     );
