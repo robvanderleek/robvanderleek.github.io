@@ -4,6 +4,7 @@ import React from "react";
 import {AboutArea} from "./About.style";
 import Hyperlink from "../../components/Hyperlink";
 import {Link} from "react-router-dom";
+import resume from "../../static/media/Resume-Rob-van-der-Leek.pdf"
 
 export default function About() {
     return (
@@ -25,7 +26,7 @@ export default function About() {
                 </span>
             </Contact>
             <Info>
-                <p>Lives and works in The Netherlands.</p>
+                <p><Hyperlink href={resume}>Lives and works in The Netherlands.</Hyperlink></p>
                 <p><Hyperlink href="https://www.dropbox.com/s/3xbw5atzmxuarl5/thesis.pdf?dl=0">Studied Computer Science
                     at Delft University of Technology.</Hyperlink></p>
                 <p><Hyperlink href="https://keplervision.eu">Currently working at a Computer
