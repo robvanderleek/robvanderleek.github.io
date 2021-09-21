@@ -34,7 +34,10 @@ export default function About() {
                 <p><Hyperlink href="https://www.amazon.com/s?i=stripbooks&rh=p_27%3ARob+van+der+Leek">Passion for
                     software quality and software minimalism.</Hyperlink></p>
                 <p><Link to="/portfolio">Side projects are on the Portfolio page.</Link></p>
-                <p><Link to="/gists">Short technical writings are on the Gists page.</Link></p>
+                <p>
+                    <Link to="/gists">Short technical writings are on the Gists page</Link>,&nbsp;
+                    <Hyperlink href="https://robvanderleek.medium.com/">longer reads are on Medium.</Hyperlink>
+                </p>
                 <p>Done some of his best development work under the shower.</p>
             </Info>
         </AboutArea>
