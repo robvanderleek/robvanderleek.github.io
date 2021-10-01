@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {createMuiTheme, MuiThemeProvider} from '@material-ui/core/styles';
+import {MuiThemeProvider} from '@material-ui/core/styles';
 import {HashRouter} from "react-router-dom";
+import {createTheme} from "@material-ui/core";
 
-const theme = createMuiTheme({
+const theme = createTheme({
     palette: {
         type: 'dark',
         primary: {

@@ -11,6 +11,10 @@ export default function Portfolio() {
     return (
         <div style={{marginTop: '60px', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
             <PortfolioCard title="PWA NES" year="2021" image={pwaNesImage} url="https://pwa-nes.vercel.app">
+                <iframe
+                    src="https://ghbtns.com/github-btn.html?user=robvanderleek&repo=pwa-nes&type=star&count=true"
+                    frameBorder="0" scrolling="0" width="150" height="20"
+                    title="Star repository on GitHub"/>
                 <Typography variant="body1" color="textSecondary" component="p">
                     8-bit NES Emulator as Progressive Web App
                 </Typography>
