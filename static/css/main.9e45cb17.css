@@ -1,0 +1,2 @@
+@import url(https://fonts.googleapis.com/css?family=Lato&display=swap);body,html{height:100%}body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background-color:#000;color:#7a7c80;font-family:Lato,sans-serif;margin:0;padding:0}#root{height:100%}.white,h2{color:#fff}a{color:#7a7c80;text-decoration:none}a.tab{color:unset}a:hover{color:#f35;transition:.3s}@media (max-width:780px){.main{flex-direction:column}.contact{padding:5rem 0 0}.info{padding:2rem 0 0 1.5rem}}
+/*# sourceMappingURL=main.9e45cb17.css.map*/
