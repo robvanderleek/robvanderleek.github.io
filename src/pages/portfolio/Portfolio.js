@@ -19,9 +19,9 @@ export default function Portfolio() {
                     8-bit NES Emulator as Progressive Web App
                 </Typography>
             </PortfolioCard>
-            <PortfolioCard title="Repo Meister" year="2021" image={repoMeisterImage} url="https://repomeister.com">
+            <PortfolioCard title="Repo Meister" year="2021" image={repoMeisterImage}>
                 <Typography variant="body1" color="textSecondary" component="p">
-                    GitHub repository management made easy
+                    GitHub repository management made easy [INACTIVE]
                 </Typography>
             </PortfolioCard>
             <PortfolioCard title="Patching" year="2020" image={patchingImage} url="https://patching.io">

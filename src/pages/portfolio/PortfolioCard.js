@@ -7,17 +7,34 @@ import PropTypes from 'prop-types';
 import CardMedia from "@material-ui/core/CardMedia";
 
 export default function PortfolioCard(props) {
-    return (
-        <PortfolioCardArea>
-            <CardActionArea onClick={() => window.open(props.url, "_blank")}>
-                <CardHeader title={props.title} subheader={props.year}/>
+    const {url, title, year, image, children} = props;
+
+    const getCardContent = () => {
+        return (
+            <React.Fragment>
+                <CardHeader title={title} subheader={year}/>
                 <CardMedia>
-                    <PortfolioCardMedia src={props.image} />
+                    <PortfolioCardMedia src={image}/>
                 </CardMedia>
                 <CardContent>
-                    {props.children}
+                    {children}
                 </CardContent>
+            </React.Fragment>
+        );
+    }
+
+    const getActiveCard = () => {
+        return (
+            <CardActionArea onClick={() => url && window.open(url, "_blank")}>
+                {getCardContent()}
             </CardActionArea>
+        );
+    }
+
+    return (
+        <PortfolioCardArea>
+            {url && getActiveCard()}
+            {!url && getCardContent()}
         </PortfolioCardArea>
     );
 }
@@ -26,5 +43,5 @@ PortfolioCard.propTypes = {
     title: PropTypes.string.isRequired,
     year: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
+    url: PropTypes.string
 }
