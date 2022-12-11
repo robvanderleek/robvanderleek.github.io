@@ -14,11 +14,11 @@ export default function About() {
                 <p><a href="mailto:robvanderleek@gmail.com">robvanderleek@gmail.com</a></p>
                 <span className="icons">
                     <Hyperlink href="https://twitter.com/robvanderleek"><i className="fab fa-twitter"/></Hyperlink>
+                    <Hyperlink href="https://home.social/@robvanderleek"><i className="fab fa-mastodon"/></Hyperlink>
                     <Hyperlink href="https://www.linkedin.com/in/rob-van-der-leek-66596962"><i
                         className="fab fa-linkedin"/></Hyperlink>
                     <Hyperlink href="https://medium.com/@robvanderleek"><i className="fab fa-medium"/></Hyperlink>
                     <Hyperlink href="https://github.com/robvanderleek"><i className="fab fa-github"/></Hyperlink>
-                    <Hyperlink href="https://home.social/@robvanderleek"><i className="fab fa-mastodon"/></Hyperlink>
                     <Hyperlink href="https://stackoverflow.com/users/4232558/rob-van-der-leek"><i
                         className="fab fa-stack-overflow"/></Hyperlink>
                     <Hyperlink href="https://www.instagram.com/robvanderleek"><i
