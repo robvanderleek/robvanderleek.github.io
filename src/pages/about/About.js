@@ -23,10 +23,13 @@ export default function About() {
                         className="fab fa-stack-overflow"/></Hyperlink>
                     <Hyperlink href="https://www.instagram.com/robvanderleek"><i
                         className="fab fa-instagram"/></Hyperlink>
+                    <Hyperlink href="https://unsplash.com/@robvanderleek"><i
+                        className="fab fa-unsplash"/></Hyperlink>
                 </span>
             </Contact>
             <Info>
-                <p><Hyperlink href="https://registry.jsonresume.org/robvanderleek">Lives and works in The Netherlands.</Hyperlink></p>
+                <p><Hyperlink href="https://registry.jsonresume.org/robvanderleek">Lives and works in The
+                    Netherlands.</Hyperlink></p>
                 <p><Hyperlink href="https://www.dropbox.com/s/4cmayfumnvzlzml/thesis.pdf?dl=0">Studied Computer Science
                     at Delft University of Technology.</Hyperlink></p>
                 <p><Hyperlink href="https://keplervision.eu">Currently working at a Computer
@@ -38,7 +41,9 @@ export default function About() {
                     <Link to="/gists">Short technical writings are on the Gists page</Link>,&nbsp;
                     <Hyperlink href="https://robvanderleek.medium.com/">longer reads are on Medium.</Hyperlink>
                 </p>
-                <p>Done some of his best development work under the shower.</p>
+                <p><Hyperlink
+                    href="https://twitter.com/robvanderleek/status/1104328624218562561?s=20&t=SVuMvYeL2DKFfMVzwCkJ4w">Done
+                    some of his best development work under the shower.</Hyperlink></p>
             </Info>
         </AboutArea>
     );
