@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.9e45cb17.css",
-    "main.js": "/static/js/main.a6310069.js",
+    "main.js": "/static/js/main.0279fd57.js",
     "static/media/repomeister.png": "/static/media/repomeister.85a1d656f1790ea1722b.png",
     "static/media/patching.png": "/static/media/patching.c779c675337039420f21.png",
     "static/media/pwa-nes.png": "/static/media/pwa-nes.c6f3332b1eaf663bbcec.png",
@@ -10,10 +10,10 @@
     "static/media/create-issue-branch.png": "/static/media/create-issue-branch.5e8af63aa98475ac8b10.png",
     "index.html": "/index.html",
     "main.9e45cb17.css.map": "/static/css/main.9e45cb17.css.map",
-    "main.a6310069.js.map": "/static/js/main.a6310069.js.map"
+    "main.0279fd57.js.map": "/static/js/main.0279fd57.js.map"
   },
   "entrypoints": [
     "static/css/main.9e45cb17.css",
-    "static/js/main.a6310069.js"
+    "static/js/main.0279fd57.js"
   ]
 }
