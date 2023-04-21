@@ -1,12 +1,20 @@
 import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
-import React from "react";
+import React, {ReactNode} from "react";
 import {PortfolioCardArea, PortfolioCardMedia} from "./Portfolio.style";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import PropTypes from 'prop-types';
 import CardMedia from "@material-ui/core/CardMedia";
 
-export default function PortfolioCard(props) {
+interface PortfolioCardProps {
+    title: string;
+    year: string;
+    image: any;
+    url?: string;
+    children: ReactNode;
+}
+
+export default function PortfolioCard(props: PortfolioCardProps) {
     const {url, title, year, image, children} = props;
 
     const getCardContent = () => {

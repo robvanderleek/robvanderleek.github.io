@@ -1,6 +1,13 @@
 import styled from "styled-components";
 import Card from "@material-ui/core/Card";
 
+export const PortfolioCardList = styled.div`
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const PortfolioCardArea = styled(Card)`
     width: 80%;
     @media (min-width: 1060px) {
@@ -19,4 +26,9 @@ export const PortfolioCardMedia = styled.img`
         filter: none;
         transition: 1.5s;
     }
+`;
+
+export const PortfolioIFrame = styled.iframe`
+  border: 0;
+  overflow: hidden;
 `;
