@@ -14,7 +14,7 @@ export default function About() {
                 <p><a href="mailto:robvanderleek@gmail.com">robvanderleek@gmail.com</a></p>
                 <span className="icons">
                     <Hyperlink href="https://twitter.com/robvanderleek"><i className="fab fa-twitter"/></Hyperlink>
-                    <Hyperlink href="https://home.social/@robvanderleek"><i className="fab fa-mastodon"/></Hyperlink>
+                    <Hyperlink href="https://mastodon.social/@robvanderleek"><i className="fab fa-mastodon"/></Hyperlink>
                     <Hyperlink href="https://www.linkedin.com/in/rob-van-der-leek-66596962"><i
                         className="fab fa-linkedin"/></Hyperlink>
                     <Hyperlink href="https://medium.com/@robvanderleek"><i className="fab fa-medium"/></Hyperlink>
