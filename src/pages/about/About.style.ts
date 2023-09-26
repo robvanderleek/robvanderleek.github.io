@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import {styled} from "@mui/material/styles";
 
-export const AboutArea = styled.div`
+export const AboutArea = styled('div')`
     margin-top: 60px;
     display: flex;
     align-items: center;

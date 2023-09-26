@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import {styled} from "@mui/material/styles";
 
-export const Main = styled.div`
+export const Main = styled('div')`
     height: 100%;
 `;
 
-export const Contact = styled.div`
+export const Contact = styled('div')`
     text-align: center;
     & > p {
         font-size: 1.1rem;
@@ -21,7 +21,7 @@ export const Contact = styled.div`
     }
 `;
 
-export const Info = styled.div`
+export const Info = styled('div')`
     margin-top: 1em;
     margin-bottom: 1em;
     width: 70%;
@@ -46,7 +46,7 @@ export const Info = styled.div`
     }
 `;
 
-export const ProfileImage = styled.img`
+export const ProfileImage = styled('img')`
     margin-top: 1em;
     margin-bottom: 1em;
 `;

@@ -6,8 +6,8 @@ import ciblImage from "../../static/media/create-issue-branch.png";
 import cicdbuzzImage from "../../static/media/cicd-buzz.jpg";
 import pwaNesImage from "../../static/media/pwa-nes.png";
 import mudslideImage from "../../static/media/mudslide-logo-180x180.png";
-import Typography from "@material-ui/core/Typography";
 import {PortfolioCardList, PortfolioIFrame} from "./Portfolio.style";
+import {Typography} from "@mui/material";
 
 export default function Portfolio() {
     return (

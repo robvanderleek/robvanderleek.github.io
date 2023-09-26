@@ -1,13 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, {ChangeEvent, useEffect, useState} from 'react';
 import './App.css';
 import {Main} from "./App.style";
-import AppBar from "@material-ui/core/AppBar";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
 import About from "./pages/about/About";
 import Portfolio from "./pages/portfolio/Portfolio";
 import {Link, Route, Switch, useLocation} from "react-router-dom";
 import Gists from "./pages/gists/Gists";
+import {AppBar, Tab, Tabs} from "@mui/material";
 
 function App() {
     const [value, setValue] = useState(0);
@@ -23,7 +21,7 @@ function App() {
         }
     }, [location]);
 
-    const handleChange = (event, newValue) => {
+    const handleChange = (_: ChangeEvent<{}>, newValue: number) => {
         window.scrollTo(0, 0);
         setValue(newValue);
     };

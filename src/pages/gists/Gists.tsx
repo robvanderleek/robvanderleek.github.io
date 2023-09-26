@@ -1,18 +1,19 @@
 import React, {useEffect, useState} from "react";
-import Moment from 'react-moment';
-import {Avatar, List, ListItem, ListItemAvatar, ListItemText} from "@material-ui/core";
-import {Subject} from "@material-ui/icons";
+import moment from "moment";
+import {Gist} from "../../entities/Gist";
+import {Avatar, List, ListItem, ListItemAvatar, ListItemText} from "@mui/material";
+import {Subject} from "@mui/icons-material";
 
-function isMarkDownFileObject(fo) {
+function isMarkDownFileObject(fo: any) {
     return fo.language && fo.language === 'Markdown';
 }
 
-function filterMarkdownGists(gists) {
+function filterMarkdownGists(gists: Array<Gist>) {
     return gists.filter(g =>
         g.files && Object.keys(g.files).map(k => g.files[k]).some(f => isMarkDownFileObject(f)));
 }
 
-function gistEntry(gist) {
+function gistEntry(gist: Gist) {
     let description = gist.description;
     if (!description) {
         if (gist.files) {
@@ -26,13 +27,13 @@ function gistEntry(gist) {
                     <Subject/>
                 </Avatar>
             </ListItemAvatar>
-            <ListItemText primary={description} secondary={<Moment fromNow>{gist.updated_at}</Moment>}/>
+            <ListItemText primary={description} secondary={moment(gist.updated_at).fromNow()}/>
         </ListItem>
     );
 }
 
 export default function Gists() {
-    const [gists, setGists] = useState([]);
+    const [gists, setGists] = useState<Array<Gist>>([]);
 
     useEffect(() => {
         async function loadGists() {

@@ -9,5 +9,5 @@ test('renders learn react link', () => {
             <App/>
         </MemoryRouter>
     );
-    expect(getByText(/About/i)).toBeInTheDocument();
+    expect(getByText(/About/i)).toBeDefined();
 });
