@@ -1,13 +1,6 @@
 import {styled} from "@mui/material/styles";
 import {Card} from "@mui/material";
 
-export const PortfolioCardList = styled('div')`
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
 export const PortfolioCardArea = styled(Card)`
   width: 80%;
   @media (min-width: 1060px) {

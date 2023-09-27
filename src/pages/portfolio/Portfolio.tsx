@@ -6,12 +6,22 @@ import ciblImage from "../../static/media/create-issue-branch.png";
 import cicdbuzzImage from "../../static/media/cicd-buzz.jpg";
 import pwaNesImage from "../../static/media/pwa-nes.png";
 import mudslideImage from "../../static/media/mudslide-logo-180x180.png";
-import {PortfolioCardList, PortfolioIFrame} from "./Portfolio.style";
+import codelimitImage from "../../static/media/codelimit.png";
+import {PortfolioIFrame} from "./Portfolio.style";
 import {Typography} from "@mui/material";
+import {ItemList} from "../pages.style";
 
 export default function Portfolio() {
     return (
-        <PortfolioCardList>
+        <ItemList>
+            <PortfolioCard title="Code Limit" year="2023" image={codelimitImage}>
+                <PortfolioIFrame
+                    src="https://ghbtns.com/github-btn.html?user=getcodelimit&repo=codelimit&type=star&count=true"
+                    width="150" height="20" title="Star repository on GitHub"/>
+                <Typography variant="body1" color="textSecondary" component="p">
+                    Your Refactoring Alarm 🔔
+                </Typography>
+            </PortfolioCard>
             <PortfolioCard title="Mudslide" year="2022" image={mudslideImage}>
                 <PortfolioIFrame
                     src="https://ghbtns.com/github-btn.html?user=robvanderleek&repo=mudslide&type=star&count=true"
@@ -53,6 +63,6 @@ export default function Portfolio() {
                     Post on Medium that shows how to setup a modern CI/CD pipeline using free and hosted services.
                 </Typography>
             </PortfolioCard>
-        </PortfolioCardList>
+        </ItemList>
     );
 }

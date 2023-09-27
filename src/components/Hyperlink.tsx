@@ -1,6 +1,8 @@
+import {ReactNode} from "react";
+
 interface HyperlinkProps {
     href: string;
-    children: JSX.Element | string;
+    children: ReactNode | string;
 }
 
 export default function Hyperlink(props: HyperlinkProps) {

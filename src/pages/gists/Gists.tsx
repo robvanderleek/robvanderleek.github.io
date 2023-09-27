@@ -3,6 +3,7 @@ import moment from "moment";
 import {Gist} from "../../entities/Gist";
 import {Avatar, List, ListItem, ListItemAvatar, ListItemText} from "@mui/material";
 import {Subject} from "@mui/icons-material";
+import {ItemList} from "../pages.style";
 
 function isMarkDownFileObject(fo: any) {
     return fo.language && fo.language === 'Markdown';
@@ -47,11 +48,13 @@ export default function Gists() {
         loadGists();
     }, []);
 
-    return (<div style={{marginTop: '60px', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-        <List>
-            {gists && gists.map((g, i) => <a key={i} target="_blank"
-                                             rel="noopener noreferrer"
-                                             href={`https://gist.io/@robvanderleek/${g.id}`}>{gistEntry(g)}</a>)}
-        </List>
-    </div>);
+    return (
+        <ItemList>
+            <List>
+                {gists && gists.map((g, i) => <a key={i} target="_blank"
+                                                 rel="noopener noreferrer"
+                                                 href={`https://gist.io/@robvanderleek/${g.id}`}>{gistEntry(g)}</a>)}
+            </List>
+        </ItemList>
+    );
 }

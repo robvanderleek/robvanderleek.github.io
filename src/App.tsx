@@ -7,7 +7,7 @@ import {Link, Route, Switch, useLocation} from "react-router-dom";
 import Gists from "./pages/gists/Gists";
 import {AppBar, Tab, Tabs} from "@mui/material";
 
-function App() {
+export default function App() {
     const [value, setValue] = useState(0);
     const location = useLocation();
 
@@ -28,7 +28,7 @@ function App() {
 
     return (
         <Main>
-            <AppBar>
+            <AppBar sx={{backgroundColor: '#000000'}} elevation={0}>
                 <Tabs value={value} onChange={handleChange} centered>
                     <Tab label="About" to="/" component={Link} disabled={value === 0}/>
                     <Tab label="Portfolio" to="/portfolio" component={Link} disabled={value === 1}/>
@@ -43,5 +43,3 @@ function App() {
         </Main>
     );
 }
-
-export default App;

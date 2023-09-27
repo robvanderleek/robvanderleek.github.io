@@ -2,16 +2,16 @@ import React from 'react';
 import * as ReactDOMClient from 'react-dom/client';
 import App from './App';
 import {HashRouter} from "react-router-dom";
-import {createTheme, ThemeProvider} from "@mui/material";
+import {createTheme, CssBaseline, ThemeProvider} from "@mui/material";
 
 const theme = createTheme({
     palette: {
         mode: 'dark',
         primary: {
-            main: '#000000'
+            main: '#FF3355'
         },
-        secondary: {
-            main: '#c3c3c3'
+        background: {
+            default: '#000000'
         }
     },
 });
@@ -19,7 +19,10 @@ const theme = createTheme({
 function Index() {
     return (
         <HashRouter>
-            <ThemeProvider theme={theme}><App/></ThemeProvider>
+            <ThemeProvider theme={theme}>
+                <CssBaseline/>
+                <App/>
+            </ThemeProvider>
         </HashRouter>
     );
 }
