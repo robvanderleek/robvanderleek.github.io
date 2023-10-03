@@ -30,17 +30,17 @@ export default function App() {
 
     const swipeHandlers = useSwipeable({
         onSwipedLeft: () => {
-            if (value === 1) {
-                history.push('/');
-            } else if (value === 2) {
-                history.push('/portfolio');
-            }
-        },
-        onSwipedRight: () => {
             if (value === 0) {
                 history.push('/portfolio');
             } else if (value === 1) {
                 history.push('/gists');
+            }
+        },
+        onSwipedRight: () => {
+            if (value === 1) {
+                history.push('/');
+            } else if (value === 2) {
+                history.push('/portfolio');
             }
         },
     });
