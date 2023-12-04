@@ -19,6 +19,7 @@ export default function About() {
                         className="fab fa-linkedin"/></Hyperlink>
                     <Hyperlink href="https://medium.com/@robvanderleek"><i className="fab fa-medium"/></Hyperlink>
                     <Hyperlink href="https://github.com/robvanderleek"><i className="fab fa-github"/></Hyperlink>
+                    <Hyperlink href="https://dev.to/robvanderleek/"><i className="fab fa-dev"/></Hyperlink>
                     <Hyperlink href="https://stackoverflow.com/users/4232558/rob-van-der-leek"><i
                         className="fab fa-stack-overflow"/></Hyperlink>
                     <Hyperlink href="https://www.instagram.com/robvanderleek"><i
@@ -40,8 +41,11 @@ export default function About() {
                     software quality and software minimalism.</Hyperlink></p>
                 <p><Link to="/portfolio">Side projects are on the Portfolio page.</Link></p>
                 <p>
-                    <Link to="/gists">Short technical writings are on the Gists page</Link>,&nbsp;
-                    <Hyperlink href="https://robvanderleek.medium.com/">longer reads are on Medium.</Hyperlink>
+                    <Link to="/gists">Short technical writings are on the Gists page</Link>
+                    <Hyperlink href="https://dev.to/robvanderleek/">, and dev.to.</Hyperlink>&nbsp;
+                </p>
+                <p>
+                    <Hyperlink href="https://robvanderleek.medium.com/">Longer reads are on Medium.</Hyperlink>
                 </p>
                 <p><Hyperlink
                     href="https://twitter.com/robvanderleek/status/1104328624218562561?s=20&t=SVuMvYeL2DKFfMVzwCkJ4w">Done
