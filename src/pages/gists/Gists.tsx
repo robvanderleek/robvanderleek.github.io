@@ -4,7 +4,8 @@ import {Gist} from "../../entities/Gist";
 import {Avatar, List, ListItem, ListItemAvatar, ListItemText} from "@mui/material";
 import {Subject} from "@mui/icons-material";
 import {ItemList} from "../pages.style";
-import {BeatLoader, HashLoader} from "react-spinners";
+import {BeatLoader} from "react-spinners";
+import {CenteredContent} from "../../App.style";
 
 function isMarkDownFileObject(fo: any) {
     return fo.language && fo.language === 'Markdown';
@@ -72,7 +73,7 @@ export default function Gists() {
     }
 
     if (loading) {
-        return renderLoader();
+        return <CenteredContent>{renderLoader()}</CenteredContent>;
     } else {
         return renderGists();
     }

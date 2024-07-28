@@ -1,13 +1,12 @@
-import {Contact, Info, ProfileImage} from "../../App.style";
+import {CenteredContent, Contact, Info, ProfileImage} from "../../App.style";
 import profile_picture from "../../static/media/me-2020-1200x1597.jpg";
 import React from "react";
-import {AboutArea} from "./About.style";
 import Hyperlink from "../../components/Hyperlink";
 import {Link} from "react-router-dom";
 
 export default function About() {
     return (
-        <AboutArea>
+        <CenteredContent>
             <Contact>
                 <ProfileImage src={profile_picture} alt="This is me" width="282" height="375"/>
                 <h2>Rob van der Leek</h2>
@@ -51,6 +50,6 @@ export default function About() {
                     href="https://twitter.com/robvanderleek/status/1104328624218562561?s=20&t=SVuMvYeL2DKFfMVzwCkJ4w">Done
                     some of his best development work under the shower.</Hyperlink></p>
             </Info>
-        </AboutArea>
+        </CenteredContent>
     );
 }
