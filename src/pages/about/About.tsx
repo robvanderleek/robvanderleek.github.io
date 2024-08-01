@@ -3,6 +3,8 @@ import profile_picture from "../../static/media/me-2020-1200x1597.jpg";
 import React from "react";
 import Hyperlink from "../../components/Hyperlink";
 import {Link} from "react-router-dom";
+import MergeIcon from '@mui/icons-material/Merge';
+import Version from "../../version";
 
 export default function About() {
     return (
@@ -27,6 +29,12 @@ export default function About() {
                         className="fab fa-unsplash"/></Hyperlink>
                     <Hyperlink href="https://www.buymeacoffee.com/robvanderleek"><i
                         className="fas fa-mug-hot"/></Hyperlink>
+                </span>
+                <span className="version">
+                    <Hyperlink href="https://github.com/robvanderleek/robvanderleek.github.io">
+                        <MergeIcon fontSize={'small'}
+                                   sx={{position: 'relative', top: '4px'}}/> {Version.gitSha.substring(0, 8)}
+                    </Hyperlink>
                 </span>
             </Contact>
             <Info>

@@ -19,19 +19,29 @@ export const CenteredContent = styled('div')`
 `;
 
 export const Contact = styled('div')`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+
     & > p {
         font-size: 1.1rem;
         padding-bottom: 10px;
         margin: 0;
     }
+
     & > h2 {
         font-size: 1.7rem;
         margin-bottom: 10px;
     }
+
     & > .icons > a {
         font-size: 1.5rem;
         padding: 10px;
+    }
+
+    & > .version > a {
+        font-size: 0.8rem;
     }
 `;
 
