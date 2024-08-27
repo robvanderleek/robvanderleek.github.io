@@ -1,26 +1,32 @@
 name: Deploy
 on:
   push:
-    branches:
-    - develop    
+    branches: [develop]    
 jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
       CI: true
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
+    - name: 'Checkout sources'
+      uses: actions/checkout@v4
+
+    - name: 'Setup NodeJS'
+      uses: actions/setup-node@v4
       with:
         node-version: 20.x
-    - run: yarn install
-    - run: yarn export
-    - name: deploy
-      uses: peaceiris/actions-gh-pages@v2
+
+    - name: 'Install dependencies'
+      run: yarn install
+
+    - name: 'Build'
+      run: yarn export
+
+    - name: 'Deploy'
+      uses: peaceiris/actions-gh-pages@v4
       env:
-        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        PUBLISH_BRANCH: master
-        PUBLISH_DIR: ./build
-      with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        publish_branch: master
+        publish_dir: ./build
         username: "Rob van der Leek"
         useremail: "robvanderleek@gmail.com"
