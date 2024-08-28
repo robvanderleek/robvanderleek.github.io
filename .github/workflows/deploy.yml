@@ -24,9 +24,8 @@ jobs:
 
     - name: 'Deploy'
       uses: peaceiris/actions-gh-pages@v4
-      env:
+      with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        publish_branch: master
         publish_dir: ./build
         username: "Rob van der Leek"
         useremail: "robvanderleek@gmail.com"
