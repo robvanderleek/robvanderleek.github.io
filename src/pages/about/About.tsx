@@ -13,6 +13,8 @@ export default function About() {
                 <ProfileImage src={profile_picture} alt="This is me" width="282" height="375"/>
                 <h2>Rob van der Leek</h2>
                 <span className="icons">
+                    <Hyperlink href="https://bsky.app/profile/robvanderleek.bsky.social"><i
+                        className="fa-brands fa-bluesky"/></Hyperlink>
                     <Hyperlink href="https://twitter.com/robvanderleek"><i className="fab fa-x-twitter"/></Hyperlink>
                     <Hyperlink href="https://mastodon.social/@robvanderleek"><i
                         className="fab fa-mastodon"/></Hyperlink>
