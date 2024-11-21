@@ -1,7 +1,7 @@
 import {styled} from "@mui/material/styles";
 
 export const ItemList = styled('div')`
-  margin-top: 60px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
