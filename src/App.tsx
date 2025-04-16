@@ -3,14 +3,14 @@ import './App.css';
 import {Main} from "./App.style";
 import About from "./pages/about/About";
 import Portfolio from "./pages/portfolio/Portfolio";
-import {Link, Route, Switch, useHistory, useLocation} from "react-router-dom";
+import {Link, Route, Routes, useLocation, useNavigate} from "react-router-dom";
 import Gists from "./pages/gists/Gists";
 import {AppBar, Tab, Tabs} from "@mui/material";
 import {useSwipeable} from "react-swipeable";
 
 export default function App() {
     const [value, setValue] = useState(0);
-    const history = useHistory();
+    const navigate = useNavigate()
     const location = useLocation();
 
     useEffect(() => {
@@ -31,16 +31,16 @@ export default function App() {
     const swipeHandlers = useSwipeable({
         onSwipedLeft: () => {
             if (value === 0) {
-                history.push('/portfolio');
+                navigate('/portfolio');
             } else if (value === 1) {
-                history.push('/gists');
+                navigate('/gists');
             }
         },
         onSwipedRight: () => {
             if (value === 1) {
-                history.push('/');
+                navigate('/');
             } else if (value === 2) {
-                history.push('/portfolio');
+                navigate('/portfolio');
             }
         },
     });
@@ -54,11 +54,11 @@ export default function App() {
                     <Tab label="Gists" to="/gists" component={Link} disabled={value === 2}/>
                 </Tabs>
             </AppBar>
-            <Switch>
-                <Route exact path='/portfolio' component={Portfolio}/>
-                <Route exact path='/gists' component={Gists}/>
-                <Route component={About}/>
-            </Switch>
+            <Routes>
+                <Route index element={<About/>}/>
+                <Route path='/portfolio' element={<Portfolio/>}/>
+                <Route path='/gists' element={<Gists/>}/>
+            </Routes>
         </Main>
     );
 }
