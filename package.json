@@ -28,7 +28,7 @@
     "jsdom": "^24.0.0",
     "mkver": "^3.0.2",
     "typescript": "^5.8.3",
-    "vite": "^5.1.4",
+    "vite": "^5.4.20",
     "vite-plugin-svgr": "^4.0.0",
     "vite-tsconfig-paths": "^4.3.1",
     "vitest": "^1.3.1"
