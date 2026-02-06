@@ -1,0 +1,19 @@
+name: codelimit
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout sources
+      uses: actions/checkout@v6
+
+    - name: Run CodeLimit
+      uses: getcodelimit/codelimit-action@v1

@@ -1,45 +1,44 @@
 {
   "name": "my-homepage",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/icons-material": "^7.0.1",
-    "@mui/material": "^7.0.1",
+    "@mui/material": "^7.3.2",
     "moment": "^2.29.4",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^7.5.0",
-    "react-spinners": "^0.13.8",
+    "react-router-dom": "^7.9.3",
+    "react-spinners": "^0.17.0",
     "react-swipeable": "^7.0.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.2",
-    "@testing-library/react": "^14.2.1",
-    "@types/node": "^18.15.3",
+    "@testing-library/react": "^15.0.7",
+    "@types/node": "^24.6.1",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.0.11",
     "@types/react-router-dom": "^5.3.3",
-    "@vitejs/plugin-react": "^4.1.0",
+    "@vitejs/plugin-react": "^5.0.4",
     "gh-pages": "^6.1.1",
-    "jsdom": "^24.0.0",
+    "jsdom": "^27.0.0",
     "mkver": "^3.0.2",
     "typescript": "^5.8.3",
-    "vite": "^5.1.4",
+    "vite": "^6.3.5",
     "vite-plugin-svgr": "^4.0.0",
-    "vite-tsconfig-paths": "^4.3.1",
-    "vitest": "^1.3.1"
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.2.4"
   },
   "scripts": {
     "prepare": "mkver ./src/version.ts",
     "start": "vite",
     "build": "tsc && vite build",
-    "export": "yarn run build && touch build/.nojekyll",
-    "test": "vitest run",
-    "dev": "vite"
+    "export": "npm run build && touch build/.nojekyll",
+    "test": "vitest run"
   },
   "browserslist": {
     "production": [
