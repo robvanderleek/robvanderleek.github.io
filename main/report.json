@@ -1,0 +1,161 @@
+{
+  "version": "0.21.0",
+  "uuid": "63c28351-fa64-4c62-bcea-2dc408795b01",
+  "timestamp": "2026-02-21T18:32:40+00:00",
+  "root": "/github/workspace",
+  "repository": {
+    "owner": "robvanderleek",
+    "name": "robvanderleek.github.io",
+    "branch": "main"
+  },
+  "codebase": {
+    "totals": {
+      "TypeScript": {
+        "files": 7,
+        "lines_of_code": 0,
+        "functions": 0,
+        "hard_to_maintain": 0,
+        "unmaintainable": 0
+      },
+      "JavaScript": {
+        "files": 2,
+        "lines_of_code": 106,
+        "functions": 6,
+        "hard_to_maintain": 0,
+        "unmaintainable": 0
+      }
+    },
+    "tree": {
+      "./": {
+        "entries": [
+          "vite.config.ts",
+          "src/"
+        ],
+        "profile": [17, 89, 0, 0]
+      },
+      "src/": {
+        "entries": [
+          "serviceWorker.js",
+          "setupTests.js",
+          "vite-env.d.ts",
+          "App.style.ts",
+          "pages/",
+          "static/",
+          "entities/"
+        ],
+        "profile": [17, 89, 0, 0]
+      },
+      "src/pages/": {
+        "entries": [
+          "pages.style.ts",
+          "portfolio/"
+        ],
+        "profile": [0, 0, 0, 0]
+      },
+      "src/pages/portfolio/": {
+        "entries": [
+          "Portfolio.style.ts"
+        ],
+        "profile": [0, 0, 0, 0]
+      },
+      "src/static/media/": {
+        "entries": [
+          "index.d.ts"
+        ],
+        "profile": [0, 0, 0, 0]
+      },
+      "src/static/": {
+        "entries": [
+          "media/"
+        ],
+        "profile": [0, 0, 0, 0]
+      },
+      "src/entities/": {
+        "entries": [
+          "Gist.ts"
+        ],
+        "profile": [0, 0, 0, 0]
+      }
+    },
+    "files": {
+      "vite.config.ts": {
+        "checksum": "050e7cab476b433b79d0dee947abc62a",
+        "language": "TypeScript",
+        "loc": 0,
+        "profile": [0, 0, 0, 0],
+        "measurements": [
+        ]
+      },
+      "src/serviceWorker.js": {
+        "checksum": "7a46f42106a4c4fd1a03c4afd48f65e9",
+        "language": "JavaScript",
+        "loc": 106,
+        "profile": [17, 89, 0, 0],
+        "measurements": [
+          {"unit_name": "register", "start": {"line": 23, "column": 8}, "end": {"line": 55, "column": 2}, "value": 22},
+          {"unit_name": "registerValidSW", "start": {"line": 57, "column": 1}, "end": {"line": 99, "column": 2}, "value": 10},
+          {"unit_name": "onupdatefound", "start": {"line": 61, "column": 20}, "end": {"line": 94, "column": 8}, "value": 24},
+          {"unit_name": "onstatechange", "start": {"line": 66, "column": 26}, "end": {"line": 93, "column": 10}, "value": 18},
+          {"unit_name": "checkValidServiceWorker", "start": {"line": 101, "column": 1}, "end": {"line": 129, "column": 2}, "value": 25},
+          {"unit_name": "unregister", "start": {"line": 131, "column": 8}, "end": {"line": 137, "column": 2}, "value": 7}
+        ]
+      },
+      "src/setupTests.js": {
+        "checksum": "dea886be67ea6fa5cee27dba16786b90",
+        "language": "JavaScript",
+        "loc": 0,
+        "profile": [0, 0, 0, 0],
+        "measurements": [
+        ]
+      },
+      "src/vite-env.d.ts": {
+        "checksum": "0352474ba2918efe13895edbc3780d94",
+        "language": "TypeScript",
+        "loc": 0,
+        "profile": [0, 0, 0, 0],
+        "measurements": [
+        ]
+      },
+      "src/App.style.ts": {
+        "checksum": "7983c8ccb01ff2a3ea46e5db3ede0526",
+        "language": "TypeScript",
+        "loc": 0,
+        "profile": [0, 0, 0, 0],
+        "measurements": [
+        ]
+      },
+      "src/pages/pages.style.ts": {
+        "checksum": "1a4d425d7c9cccf57a73142b79f05ade",
+        "language": "TypeScript",
+        "loc": 0,
+        "profile": [0, 0, 0, 0],
+        "measurements": [
+        ]
+      },
+      "src/pages/portfolio/Portfolio.style.ts": {
+        "checksum": "7a2660f4009c253d8b4e2582d4511674",
+        "language": "TypeScript",
+        "loc": 0,
+        "profile": [0, 0, 0, 0],
+        "measurements": [
+        ]
+      },
+      "src/static/media/index.d.ts": {
+        "checksum": "252cc4133f533d91e85a9f9e28625c9a",
+        "language": "TypeScript",
+        "loc": 0,
+        "profile": [0, 0, 0, 0],
+        "measurements": [
+        ]
+      },
+      "src/entities/Gist.ts": {
+        "checksum": "701170f5cd39d043b9abfdfd622e8a4e",
+        "language": "TypeScript",
+        "loc": 0,
+        "profile": [0, 0, 0, 0],
+        "measurements": [
+        ]
+      }
+    }
+  }
+}
