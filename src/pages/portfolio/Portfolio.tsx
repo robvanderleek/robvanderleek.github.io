@@ -7,6 +7,7 @@ import cicdbuzzImage from "../../static/media/cicd-buzz.jpg";
 import pwaNesImage from "../../static/media/pwa-nes.png";
 import mudslideImage from "../../static/media/mudslide-logo-180x180.png";
 import codelimitImage from "../../static/media/codelimit.png";
+import inquirerTextualImage from "../../static/media/inquirer-textual.gif";
 import {PortfolioIFrame} from "./Portfolio.style";
 import {Typography} from "@mui/material";
 import {ItemList} from "../pages.style";
@@ -14,7 +15,16 @@ import {ItemList} from "../pages.style";
 export default function Portfolio() {
     return (
         <ItemList>
-            <PortfolioCard title="Code Limit" year="2023" image={codelimitImage}>
+            <PortfolioCard title="Inquirer-Textual" year="2025" image={inquirerTextualImage}
+                           url="https://robvanderleek.github.io/inquirer-textual/">
+                <PortfolioIFrame
+                    src="https://ghbtns.com/github-btn.html?user=robvanderleek&repo=inquirer-textual&type=star&count=true"
+                    width="150" height="20" title="Star repository on GitHub"/>
+                <Typography variant="body1" color="textSecondary" component="p">
+                    Versatile library for user input in Python 🎙
+                </Typography>
+            </PortfolioCard>
+            <PortfolioCard title="Code Limit" year="2023" image={codelimitImage} url="https://getcodelimit.github.io/">
                 <PortfolioIFrame
                     src="https://ghbtns.com/github-btn.html?user=getcodelimit&repo=codelimit&type=star&count=true"
                     width="150" height="20" title="Star repository on GitHub"/>

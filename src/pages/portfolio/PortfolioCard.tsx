@@ -1,6 +1,5 @@
 import React, {ReactNode} from "react";
 import {PortfolioCardArea, PortfolioCardMedia} from "./Portfolio.style";
-import PropTypes from 'prop-types';
 import {CardActionArea, CardContent, CardHeader, CardMedia} from "@mui/material";
 
 interface PortfolioCardProps {
@@ -42,11 +41,4 @@ export default function PortfolioCard(props: PortfolioCardProps) {
             {!url && getCardContent()}
         </PortfolioCardArea>
     );
-}
-
-PortfolioCard.propTypes = {
-    title: PropTypes.string.isRequired,
-    year: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    url: PropTypes.string
 }
