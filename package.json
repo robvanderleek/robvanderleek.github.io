@@ -26,7 +26,7 @@
     "@vitejs/plugin-react": "^5.0.4",
     "gh-pages": "^6.1.1",
     "jsdom": "^28.0.0",
-    "mkver": "^3.0.2",
+    "mkver": "^4.3.1",
     "typescript": "^5.8.3",
     "vite": "^7.3.1",
     "vite-plugin-svgr": "^4.0.0",
