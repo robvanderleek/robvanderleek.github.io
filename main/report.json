@@ -1,7 +1,7 @@
 {
   "version": "0.21.0",
-  "uuid": "6b0f975d-0e20-40af-ba1d-2f31202da254",
-  "timestamp": "2026-03-29T12:33:42+00:00",
+  "uuid": "c47a8f29-394b-4a96-a932-1b8b5ae22e9b",
+  "timestamp": "2026-04-04T13:06:02+00:00",
   "root": "/github/workspace",
   "repository": {
     "owner": "robvanderleek",
@@ -11,7 +11,7 @@
   "codebase": {
     "totals": {
       "TypeScript": {
-        "files": 7,
+        "files": 8,
         "lines_of_code": 0,
         "functions": 0,
         "hard_to_maintain": 0,
@@ -39,11 +39,18 @@
           "App.style.ts",
           "vite-env.d.ts",
           "setupTests.js",
+          "components/",
           "entities/",
           "pages/",
           "static/"
         ],
         "profile": [17, 89, 0, 0]
+      },
+      "src/components/": {
+        "entries": [
+          "Hyperlink.style.ts"
+        ],
+        "profile": [0, 0, 0, 0]
       },
       "src/entities/": {
         "entries": [
@@ -124,6 +131,14 @@
         "measurements": [
         ]
       },
+      "src/components/Hyperlink.style.ts": {
+        "checksum": "8b52b364168b1a780dff1a67d2616e74",
+        "language": "TypeScript",
+        "loc": 0,
+        "profile": [0, 0, 0, 0],
+        "measurements": [
+        ]
+      },
       "src/entities/Gist.ts": {
         "checksum": "701170f5cd39d043b9abfdfd622e8a4e",
         "language": "TypeScript",
@@ -133,7 +148,7 @@
         ]
       },
       "src/pages/pages.style.ts": {
-        "checksum": "1a4d425d7c9cccf57a73142b79f05ade",
+        "checksum": "3f6655377fae7945d037b5929e52527a",
         "language": "TypeScript",
         "loc": 0,
         "profile": [0, 0, 0, 0],
