@@ -41,8 +41,8 @@ export default function About() {
             </Contact>
             <Info>
                 <p>
-                    Lives and <Hyperlink href="https://registry.jsonresume.org/robvanderleek"
-                                         styled>works</Hyperlink> in The
+                    Live and <Hyperlink href="https://registry.jsonresume.org/robvanderleek"
+                                         styled>work</Hyperlink> in The
                     Netherlands.
                 </p>
                 <p>
@@ -59,7 +59,7 @@ export default function About() {
                                            styled>software quality</Hyperlink> and software minimalism.
                 </p>
                 <p>
-                    Side projects are on the <StyledLink to="/portfolio">Portfolio</StyledLink> page.
+                    Side projects are on the <StyledLink to="/portfolio">portfolio</StyledLink> page.
                 </p>
                 <p>
                     Short technical writings are on <StyledLink to="https://mdserve.github.io/robvanderleek/notes">my
