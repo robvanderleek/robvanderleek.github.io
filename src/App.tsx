@@ -4,7 +4,6 @@ import {Main} from "./App.style";
 import About from "./pages/about/About";
 import Portfolio from "./pages/portfolio/Portfolio";
 import {Link, Route, Routes, useLocation, useNavigate} from "react-router-dom";
-import Gists from "./pages/gists/Gists";
 import {AppBar, Tab, Tabs} from "@mui/material";
 import {useSwipeable} from "react-swipeable";
 
@@ -51,13 +50,11 @@ export default function App() {
                 <Tabs value={value} onChange={handleChange} centered>
                     <Tab label="About" to="/" component={Link} disabled={value === 0}/>
                     <Tab label="Portfolio" to="/portfolio" component={Link} disabled={value === 1}/>
-                    <Tab label="Gists" to="/gists" component={Link} disabled={value === 2}/>
                 </Tabs>
             </AppBar>
             <Routes>
                 <Route index element={<About/>}/>
                 <Route path='/portfolio' element={<Portfolio/>}/>
-                <Route path='/gists' element={<Gists/>}/>
             </Routes>
         </Main>
     );

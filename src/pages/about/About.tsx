@@ -2,9 +2,9 @@ import {CenteredContent, Contact, Info, ProfileImage} from "../../App.style";
 import profile_picture from "../../static/media/me-2020-1200x1597.jpg";
 import React from "react";
 import Hyperlink from "../../components/Hyperlink";
-import {Link} from "react-router-dom";
 import MergeIcon from '@mui/icons-material/Merge';
 import Version from "../../version";
+import {StyledLink} from "../pages.style";
 
 export default function About() {
     return (
@@ -40,25 +40,40 @@ export default function About() {
                 </span>
             </Contact>
             <Info>
-                <p><Hyperlink href="https://registry.jsonresume.org/robvanderleek">Lives and works in The
-                    Netherlands.</Hyperlink></p>
-                <p><Hyperlink href="https://drive.google.com/file/d/1xNJMVcWZTlptNlHN90OSFpjmsFquYJBP/view?usp=sharing">Studied Computer Science
-                    at Delft University of Technology.</Hyperlink></p>
-                <p><Hyperlink href="https://keplervision.eu">Currently working at a Computer
-                    Vision Machine Learning startup in Amsterdam.</Hyperlink></p>
-                <p><Hyperlink href="https://www.amazon.com/s?i=stripbooks&rh=p_27%3ARob+van+der+Leek">Passion for
-                    software quality and software minimalism.</Hyperlink></p>
-                <p><Link to="/portfolio">Side projects are on the Portfolio page.</Link></p>
                 <p>
-                    <Link to="/gists">Short technical writings are on the Gists page</Link>
-                    <Hyperlink href="https://dev.to/robvanderleek/">, and dev.to.</Hyperlink>&nbsp;
+                    Lives and <Hyperlink href="https://registry.jsonresume.org/robvanderleek"
+                                         styled>works</Hyperlink> in The
+                    Netherlands.
                 </p>
                 <p>
-                    <Hyperlink href="https://robvanderleek.medium.com/">Longer reads are on Medium.</Hyperlink>
+                    Studied Computer Science at <Hyperlink
+                    href="https://drive.google.com/file/d/1xNJMVcWZTlptNlHN90OSFpjmsFquYJBP/view?usp=sharing" styled>Delft
+                    University of Technology</Hyperlink>.
                 </p>
-                <p><Hyperlink
-                    href="https://twitter.com/robvanderleek/status/1104328624218562561?s=20&t=SVuMvYeL2DKFfMVzwCkJ4w">Done
-                    some of his best development work under the shower.</Hyperlink></p>
+                <p>
+                    Currently working at a Computer Vision Machine Learning <Hyperlink
+                    href="https://keplervision.eu" styled>startup</Hyperlink> in Amsterdam.
+                </p>
+                <p>
+                    Passion for <Hyperlink href="https://www.amazon.com/s?i=stripbooks&rh=p_27%3ARob+van+der+Leek"
+                                           styled>software quality</Hyperlink> and software minimalism.
+                </p>
+                <p>
+                    Side projects are on the <StyledLink to="/portfolio">Portfolio</StyledLink> page.
+                </p>
+                <p>
+                    Short technical writings are on <StyledLink to="https://mdserve.github.io/robvanderleek/notes">my
+                    notes page</StyledLink>, and <Hyperlink href="https://dev.to/robvanderleek/"
+                                                            styled>dev.to</Hyperlink>.
+                </p>
+                <p>
+                    Longer reads are on <Hyperlink href="https://robvanderleek.medium.com/" styled>Medium</Hyperlink>.
+                </p>
+                <p>
+                    Done some of my best development work under the <Hyperlink
+                    href="https://twitter.com/robvanderleek/status/1104328624218562561?s=20&t=SVuMvYeL2DKFfMVzwCkJ4w"
+                    styled>shower</Hyperlink>.
+                </p>
             </Info>
         </CenteredContent>
     );
