@@ -1,0 +1,13 @@
+<html>
+<body>
+<script>
+var f = function(pos) {
+  var lat = pos.coords.latitude;
+  var lon = pos.coords.longitude;
+  var html = "<h1>Latitude: " + lat + ", logitude: " + lon + "</h1>";
+  document.body.innerHTML = html;
+};
+navigator.geolocation.getCurrentPosition(f);
+</script>
+</body>
+</html>
