@@ -7,6 +7,7 @@ import cicdbuzzImage from "../../static/media/cicd-buzz.jpg";
 import pwaNesImage from "../../static/media/pwa-nes.png";
 import mudslideImage from "../../static/media/mudslide-logo-180x180.png";
 import codelimitImage from "../../static/media/codelimit.png";
+import mdServeImage from "../../static/media/mdserve-logo.png";
 import inquirerTextualImage from "../../static/media/inquirer-textual.gif";
 import {PortfolioIFrame} from "./Portfolio.style";
 import {Typography} from "@mui/material";
@@ -15,6 +16,15 @@ import {ItemList} from "../pages.style";
 export default function Portfolio() {
     return (
         <ItemList>
+            <PortfolioCard title="MDServe" year="2026" image={mdServeImage}
+                           url="https://mdserve.github.io/">
+                <PortfolioIFrame
+                    src="https://ghbtns.com/github-btn.html?user=mdserve&repo=mdserve.github.io&type=star&count=true"
+                    width="150" height="20" title="Star repository on GitHub"/>
+                <Typography variant="body1" color="textSecondary" component="p">
+                    Render Markdown files in GitHub repositories 🛎️
+                </Typography>
+            </PortfolioCard>
             <PortfolioCard title="Inquirer-Textual" year="2025" image={inquirerTextualImage}
                            url="https://robvanderleek.github.io/inquirer-textual/">
                 <PortfolioIFrame

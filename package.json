@@ -23,13 +23,13 @@
     "@types/react": "^19.2.4",
     "@types/react-dom": "^19.2.3",
     "@types/react-router-dom": "^5.3.3",
-    "@vitejs/plugin-react": "^5.1.4",
+    "@vitejs/plugin-react": "^6.0.1",
     "gh-pages": "^6.1.1",
-    "jsdom": "^28.0.0",
+    "jsdom": "^29.0.1",
     "mkver": "^4.3.1",
-    "typescript": "^5.8.3",
-    "vite": "^7.3.1",
-    "vite-plugin-svgr": "^4.0.0",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.3",
+    "vite-plugin-svgr": "^5.0.0",
     "vite-tsconfig-paths": "^6.1.1",
     "vitest": "^4.0.18"
   },
@@ -37,7 +37,7 @@
     "prepare": "mkver ./src/version.ts",
     "start": "vite",
     "build": "tsc && vite build",
-    "export": "npm run build && touch build/.nojekyll",
+    "postbuild": "cp ./dist/index.html ./dist/404.html",
     "test": "vitest run"
   },
   "browserslist": {

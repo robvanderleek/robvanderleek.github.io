@@ -1,7 +1,7 @@
 import React from 'react';
 import * as ReactDOMClient from 'react-dom/client';
 import App from './App';
-import {HashRouter} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
 import {createTheme, CssBaseline, ThemeProvider} from "@mui/material";
 
 const theme = createTheme({
@@ -18,12 +18,12 @@ const theme = createTheme({
 
 function Index() {
     return (
-        <HashRouter>
+        <BrowserRouter>
             <ThemeProvider theme={theme}>
                 <CssBaseline/>
                 <App/>
             </ThemeProvider>
-        </HashRouter>
+        </BrowserRouter>
     );
 }
 

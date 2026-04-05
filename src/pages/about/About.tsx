@@ -42,7 +42,7 @@ export default function About() {
             <Info>
                 <p>
                     Live and <Hyperlink href="https://registry.jsonresume.org/robvanderleek"
-                                         styled>work</Hyperlink> in The
+                                        styled>work</Hyperlink> in The
                     Netherlands.
                 </p>
                 <p>
@@ -51,8 +51,8 @@ export default function About() {
                     University of Technology</Hyperlink>.
                 </p>
                 <p>
-                    Currently working at a Computer Vision Machine Learning <Hyperlink
-                    href="https://keplervision.eu" styled>startup</Hyperlink> in Amsterdam.
+                    Currently working at a Computer Vision AI <Hyperlink href="https://keplervision.eu"
+                                                                         styled>startup</Hyperlink> in Amsterdam.
                 </p>
                 <p>
                     Passion for <Hyperlink href="https://www.amazon.com/s?i=stripbooks&rh=p_27%3ARob+van+der+Leek"
