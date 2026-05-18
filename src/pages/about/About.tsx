@@ -41,8 +41,8 @@ export default function About() {
             </Contact>
             <Info>
                 <p>
-                    Live and <Hyperlink href="https://registry.jsonresume.org/robvanderleek"
-                                        styled>work</Hyperlink> in The
+                    Lives and <Hyperlink href="https://registry.jsonresume.org/robvanderleek"
+                                        styled>works</Hyperlink> in The
                     Netherlands.
                 </p>
                 <p>
