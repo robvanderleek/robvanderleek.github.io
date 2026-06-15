@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekend mit den Jungs 🍺</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    min-height: 100vh;
+    background: #1a0f00;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    color: #f5e6c8;
+  }
+
+  .bg-pattern {
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(180, 90, 0, 0.18) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 30%, rgba(120, 60, 0, 0.15) 0%, transparent 50%),
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(255,255,255,0.01) 40px,
+        rgba(255,255,255,0.01) 41px
+      );
+    pointer-events: none;
+  }
+
+  .hops {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .hop {
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0.06;
+    animation: drift linear infinite;
+  }
+
+  @keyframes drift {
+    0% { transform: translateY(110vh) rotate(0deg); }
+    100% { transform: translateY(-10vh) rotate(360deg); }
+  }
+
+  .container {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 2rem;
+    max-width: 700px;
+    width: 100%;
+  }
+
+  .flag-bar {
+    display: flex;
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .flag-bar div { flex: 1; }
+  .flag-black { background: #2c2c2c; }
+  .flag-red   { background: #cc0000; }
+  .flag-gold  { background: #ffcc00; }
+
+  h1 {
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #f5e0b0;
+    margin-bottom: 0.3rem;
+    text-shadow: 0 2px 20px rgba(255,160,0,0.3);
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    color: #b08050;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .mug {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    animation: sway 3s ease-in-out infinite;
+    filter: drop-shadow(0 4px 12px rgba(255,180,0,0.3));
+  }
+
+  @keyframes sway {
+    0%, 100% { transform: rotate(-4deg); }
+    50% { transform: rotate(4deg); }
+  }
+
+  .timer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .unit {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,200,80,0.15);
+    border-radius: 14px;
+    padding: 1.2rem 0.5rem 0.9rem;
+  }
+
+  .unit-num {
+    font-size: clamp(2rem, 7vw, 3.5rem);
+    font-weight: 700;
+    color: #ffc040;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -1px;
+  }
+
+  .unit-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8a6040;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  .sep {
+    font-size: 2.5rem;
+    color: rgba(255,192,64,0.3);
+    display: flex;
+    align-items: center;
+    padding-bottom: 1.4rem;
+    justify-content: center;
+  }
+
+  .timer-grid-inner {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .icons-row {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.7;
+  }
+
+  .details {
+    font-size: 0.82rem;
+    color: #7a5535;
+    letter-spacing: 0.05em;
+  }
+
+  .done-msg {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffc040;
+    animation: pulse 1s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+</style>
+</head>
+<body>
+<div class="bg-pattern"></div>
+<div class="hops" id="hops"></div>
+
+<div class="container">
+  <div class="flag-bar">
+    <div class="flag-black"></div>
+    <div class="flag-red"></div>
+    <div class="flag-gold"></div>
+  </div>
+
+  <span class="mug">🍺</span>
+  <h1>Wochenende mit den Jungs</h1>
+  <p class="subtitle">Deutschland &mdash; Freitag, 19. Juni &mdash; 15:30 Uhr</p>
+
+  <div class="timer-grid-inner" id="timer-wrap">
+    <div class="unit">
+      <div class="unit-num" id="d">--</div>
+      <div class="unit-label">Tage</div>
+    </div>
+    <div class="sep">:</div>
+    <div class="unit">
+      <div class="unit-num" id="h">--</div>
+      <div class="unit-label">Stunden</div>
+    </div>
+    <div class="sep">:</div>
+    <div class="unit">
+      <div class="unit-num" id="m">--</div>
+      <div class="unit-label">Min</div>
+    </div>
+    <div class="sep">:</div>
+    <div class="unit">
+      <div class="unit-num" id="s">--</div>
+      <div class="unit-label">Sek</div>
+    </div>
+  </div>
+
+  <div class="icons-row">
+    <span title="Bier">🍺</span>
+    <span title="Grillabend">🥩</span>
+    <span title="Deutschland">🇩🇪</span>
+    <span title="Feuer">🔥</span>
+    <span title="Kumpels">🙌</span>
+  </div>
+
+  <p class="details">Prost, Alter &mdash; wir fahren nach Deutschland!</p>
+</div>
+
+<script>
+  const hopsContainer = document.getElementById('hops');
+  const symbols = ['🍺','🥩','🔥','🌭','🍻'];
+  for (let i = 0; i < 18; i++) {
+    const el = document.createElement('div');
+    el.className = 'hop';
+    el.textContent = symbols[i % symbols.length];
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.animationDuration = (12 + Math.random() * 20) + 's';
+    el.style.animationDelay = (-Math.random() * 30) + 's';
+    el.style.fontSize = (1 + Math.random() * 2) + 'rem';
+    hopsContainer.appendChild(el);
+  }
+
+  const target = new Date('2026-06-19T15:30:00+02:00');
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function tick() {
+    const now = new Date();
+    const diff = target - now;
+
+    if (diff <= 0) {
+      document.getElementById('timer-wrap').innerHTML = '<p class="done-msg">🍺 Prost! Es geht los! 🍺</p>';
+      return;
+    }
+
+    const days    = Math.floor(diff / 86400000);
+    const hours   = Math.floor((diff % 86400000) / 3600000);
+    const minutes = Math.floor((diff % 3600000) / 60000);
+    const seconds = Math.floor((diff % 60000) / 1000);
+
+    document.getElementById('d').textContent = pad(days);
+    document.getElementById('h').textContent = pad(hours);
+    document.getElementById('m').textContent = pad(minutes);
+    document.getElementById('s').textContent = pad(seconds);
+  }
+
+  tick();
+  setInterval(tick, 1000);
+</script>
+</body>
+</html>
